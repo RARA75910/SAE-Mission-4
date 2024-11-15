@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mission 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img src="bamboo.jpg" alt="Bamboo Background" class="bg-image">
+<div class="overlay"></div>
+<img src="panda.png" alt="Logo Panda" class="logo-img">
+<nav class="nav-links">
+  <a href="index.html">Accueil</a>
+  <a href="page1.html">Page 1</a>
+  <a href="page2.html">Page 2</a>
+  <a href="page3.html">Page 3</a>
+</nav>
+
+<h1>Mission 2</h1>
+
+<div class="container">
+  <div class="partie">
+    <section>
+      <h2>Le contexte</h2>
+      <p>Dans le cadre de la SAÉ 2, nous avons approfondi nos compétences en manipulation de bases de données en utilisant Access et SQL. Cette mission nous a permis de réaliser des analyses statistiques précises, notamment sur les prix et la distribution des ventes, tout en maîtrisant des requêtes SQL complexes pour extraire des informations commerciales pertinentes.</p>
+    </section>
+  </div>
+
+  <section class="section_totale">
+    <h2>4 indicateurs intéressants :</h2>
+    <p>ces indicateurs ont tout pour être interessant car ils font appels à toutes commandes sql.  </p>
+      </section>
+</div>
+
+<div class="elements">
+  <div class="element">
+    <h2>Indicateur 1 : Nombres de produits en bouteilles par fournisseurs </h2>
+    <br><br><br>
+    <h3>Cet indicateur nous permet un ressencement de tous les fournisseurs et leurs nombres de produits proposé en bouteille.</h3>
+    <br><br><br>
+    <table>
+      <thead>
+      <tr>
+        <th>Contact</th>
+        <th>NombreDeBouteilles</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Alyssa Messata</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>Chantal Goulet</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Cheryl Saylor</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Claudio Sole</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Guylène Nodier</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Helena Carbo</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Ian Devling</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Maric Bein</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Shelley Burke</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Wendy Mackenzie</td>
+        <td>1</td>
+      </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <p>voici les commandes sql : <br><br>SELECT Fournisseur.Contact, COUNT() AS NombreDeBouteilles FROM Fournisseur INNER JOIN
+      Produit ON Fournisseur.NoFour = Produit.NoFour WHERE Produit.QteParUnite LIKE
+      "bouteilles*" GROUP BY Fournisseur.Contact ORDER BY Fournisseur.Contact;</p>
+  </div>
+
+  <div class="element">
+    <h2>Indicateur 2 : clients qui n'ont pas encore commmandé </h2>
+    <br><br><br>
+    <h3>listes des données des clients qui n'ont pas finalisé leur commande.</h3>
+
+
+    <p>SELECT Client.*<br>
+      FROM Client<br>
+      LEFT JOIN Commande ON Client.CodeCli = Commande.CodeCli<br>
+      WHERE Commande.NoCom IS NULL;<br>
+    </p>
+    <img src="1.png">
+  </div>
+
+  <div class="element">
+    <h2>Indicateur 3: produit conditionnés dans du verre ou carton</h2>
+    <br><br><br>
+    <h3>Les produits conditionnés dans du carton ou dans du verre on appliqué cette
+      commande :</h3>
+    <br><br><br>
+    <p>SELECT Produit.RefProd, Produit.NomProd, Produit.QteParUnite<br>
+      FROM Produit<br>
+      WHERE (((Produit.QteParUnite) Like "*carton*" Or (Produit.QteParUnite) Like "*verre*"));<br></p>
+  <br>
+    <img src="2.png">
+  </div>
+
+  <div class="element">
+    <h2>Indicateur 4 :  les trois villes qui ont la clientèle la plus importantes</h2>
+    <br><br><br><p>
+    SELECT TOP 3 VilleCli, COUNT(*) AS NombreClients<br>
+    FROM Client<br>
+    GROUP BY VilleCli<br>
+    ORDER BY COUNT(*) DESC;<br>
+  </p>
+    <h3>le resultat est :  Agen, Paris, Nantes et Lille avec 3 clients</h3>
+  </div>
+</div>
+</body>
+</html>

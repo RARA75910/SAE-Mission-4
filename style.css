@@ -1,0 +1,215 @@
+
+body {
+    margin: 0;
+    font-family: "Roboto Thin";
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 47, 26, 0.85);
+    z-index: -1;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(45, 79, 45, 0.95);
+    padding: 10px 20px;
+    border-bottom: 10px solid #142314;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo {
+    color: #e0ffe0;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links a {
+    color: #e0ffe0;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #3c673c;
+    border-radius: 5px;
+}
+
+
+h1 {
+    color: #9ded9d;
+    margin: 20px;
+    background-color: rgba(224, 255, 224, 0.3);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: #e0ffe0;
+    text-align: center;
+}
+
+h3 {
+    color: #e0ffe0;
+    text-align: center;
+}
+ul{
+    color: #e0ffe0;
+}
+p {
+    color: #e0ffe0;
+    text-align: center;
+    margin: 10px;
+}
+
+tbody{
+    color: #e0ffe0;
+
+}
+thead{
+    color: #e0ffe0;
+
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+section {
+    background-color: rgba(224, 255, 224, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(20, 35, 20, 0.4);
+}
+
+
+.partie {
+    display: flex;
+    background-color: rgba(61, 82, 61, 0.1);
+    border-radius: 10px;
+    border-top: #2d4f2d 20px solid;
+    margin: 20px;
+}
+
+.contenu {
+    background-color: rgba(224, 255, 224, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    box-shadow: 0 4px 8px rgba(20, 35, 20, 0.4);
+    margin: 20px;
+}
+
+
+.elements {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.element {
+    background-color: rgba(224, 255, 224, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(20, 35, 20, 0.4);
+    margin: 20px;
+}
+
+
+.mission2 .element {
+    width: 20%;
+}
+
+.mission3 .element {
+    width: 44%;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .brand {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        padding: 5px 0;
+    }
+
+    .nav-links a {
+        flex: 0 0 auto;
+        padding: 8px 15px;
+    }
+body{
+    padding-top: 70px;
+}
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .section {
+        margin: 10px;
+        min-width: 200px;
+    }
+
+    .container {
+        margin: 10px;
+    }
+}
